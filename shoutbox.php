@@ -3,9 +3,9 @@
 ?>
 <div id="shoutbox">
 <?php	
-	$result = mysql_query("SELECT * FROM shoutbox ORDER BY date_time DESC LIMIT 10");
+	$result = $mysqli->query("SELECT * FROM shoutbox ORDER BY date_time DESC LIMIT 10");
 	$messages = '';	
-	while ($row = mysql_fetch_array($result)) {
+	while ($row = $result->fetch_assoc()) {
 ?>
 		<div class="shout">
 			<div class="suser">[<?= date("M d g:ia", $row['date_time']) ?>]<?= $row['name'] ?></div>
