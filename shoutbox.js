@@ -1,7 +1,7 @@
 function sb_refresh() {
 	var ajaxRequest = new XMLHttpRequest();
 	var params = "action=" + encodeURIComponent("update");
-	ajaxRequest.open("POST", "/shout.php", true);
+	ajaxRequest.open("POST", "shout.php", true);
 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajaxRequest.onreadystatechange = function() {
 		if (!(ajaxRequest.readyState === 4 && ajaxRequest.status === 200)) {
@@ -20,7 +20,7 @@ function sb_message() {
 	var message = document.getElementById("sbmessage").value;
 	var ajaxRequest = new XMLHttpRequest();
 	var params = "name=" + encodeURIComponent(name) + "&message=" + encodeURIComponent(message);
-	ajaxRequest.open("POST", "/shout.php", true);
+	ajaxRequest.open("POST", "shout.php", true);
 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
 																								
 	ajaxRequest.onreadystatechange = function() {
