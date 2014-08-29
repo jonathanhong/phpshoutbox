@@ -1,0 +1,21 @@
+#shoutbox {
+	height: 300px;
+	width: 100%;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.shout {
+	margin-bottom: 5px;
+}
+
+.suser {
+	background-color: #DBDBDB;
+	border-bottom: 2px black solid;
+	padding: 3px;
+}
+
+.smessage {
+	background-color: #B5B5B5;
+	padding: 3px;
+}
