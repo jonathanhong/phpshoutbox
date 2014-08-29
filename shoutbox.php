@@ -2,10 +2,11 @@
   require_once("connection.php");
   $curr_user = "Myself";
   $MAX_MSGS = 10;
+  $DATE_ORDER = "ASC";
 ?>
 <div id="shoutbox">
 <?php	
-	$result = $mysqli->query("SELECT * FROM shoutbox ORDER BY date_time DESC LIMIT " . $MAX_MSGS);
+	$result = $mysqli->query("SELECT * FROM shoutbox ORDER BY date_time " . $DATE_ORDER . " LIMIT " . $MAX_MSGS);
 	$messages = '';	
 	while ($row = $result->fetch_assoc()) {
 ?>

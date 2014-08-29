@@ -1,5 +1,7 @@
 <?php
   require_once("connection.php");
+  $DATE_ORDER = "ASC";
+  $MAX_MSGS = 10;
 
   if (isset($_POST['name']) && isset($_POST['message'])) {
 		$name = $_POST['name'];
@@ -26,13 +28,13 @@
 	}
 	if (isset($_POST['action'])) {
 		if (strcmp($_POST['action'], "update") == 0) {
-			$result = $mysqli->query("SELECT * FROM shoutbox ORDER BY date_time DESC LIMIT 10");
+			$result = $mysqli->query("SELECT * FROM shoutbox ORDER BY date_time " . $DATE_ORDER . " LIMIT " . $MAX_MSGS);
       while ($row = $result->fetch_assoc()) {
 ?>
 					<div class="shout">
           <div class="suser">[<?= date("M d g:ia", $row['date_time']) ?>]<?= $row['name'] ?></div>
           <div class="smessage"><strong><?= $row['message'] ?></strong></div>
-					</div>;
+					</div>
 <?php
       }
 		}
